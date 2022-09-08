@@ -28,8 +28,12 @@
 /* Tweak these for potential memory/throughput tradeoffs */
 
 /* 16 * 1024 - 3 * 8 - 360, to make `proxystate` aligned */
+#ifndef RING_BUFFER_LEN
 #define RING_BUFFER_LEN 16000
+#endif
+#ifndef RING_BUFFER_COUNT
 #define RING_BUFFER_COUNT 4
+#endif
 #define RING_MAX_SIZE (RING_BUFFER_LEN * RING_BUFFER_COUNT)
 
 typedef struct bufent {
